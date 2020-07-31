@@ -2,8 +2,15 @@
 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
 */
 let i = 0;
-while (i < 101) {
-    console.log(i);
+while (i < 100) {
+    let j = 2;
+    while (j < i) {
+        if (i % j === 0) {
+            break;
+        }
+        j++;
+    }
+    if (i === j) { console.log(i); }
     i++;
 }
 

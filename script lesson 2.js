@@ -42,113 +42,76 @@ function three(a, b) {
     }
 }
 
-/*--------- 4 ---------*/
-let a = 3;
-
+/*4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15. */
+let a = parseInt(prompt("Enter the number from 0 to 15!"), 10);
 aRow();
 
 function aRow() {
     switch (a) {
         case 0:
-            console.log('0');
-            a++;
-            aRow();
-            break;
         case 1:
-            console.log('1');
-            a++;
-            aRow();
-            break;
         case 2:
-            console.log('2');
-            a++;
-            aRow();
-            break;
         case 3:
-            console.log('3');
-            a++;
-            aRow();
-            break;
         case 4:
-            console.log('4');
-            a++;
-            aRow();
-            break;
         case 5:
-            console.log('5');
-            a++;
-            aRow();
-            break;
         case 6:
-            console.log('6');
-            a++;
-            aRow();
-            break;
         case 7:
-            console.log('7');
-            a++;
-            aRow();
-            break;
         case 8:
-            console.log('8');
-            a++;
-            aRow();
-            break;
         case 9:
-            console.log('9');
-            a++;
-            aRow();
-            break;
         case 10:
-            console.log('10');
-            a++;
-            aRow();
-            break;
         case 11:
-            console.log('11');
-            a++;
-            aRow();
-            break;
         case 12:
-            console.log('12');
-            a++;
-            aRow();
-            break;
         case 13:
-            console.log('13');
-            a++;
-            aRow();
-            break;
         case 14:
-            console.log('14');
-            a++;
-            aRow();
-            break;
         case 15:
-            console.log('15');
+            console.log(a);
             a++;
             aRow();
-            break;
-        default:
-            break;
+
 
     }
 }
 
-/*--------- 5, 6 ---------*/
+/*--------- 5 ---------*/
 
-alert('action 5 & 6 is ' + act6(5, 5, 2));
+let result = 'results of: ';
 
-function act6(a, b, c) {
+alert(simpleMath(5, 5));
+
+function simpleMath(a, b, c) {
+    result += ' a + b = ' + (a + b);
+    result += '; a - b = ' + (a - b);
+    result += '; a / b = ' + (a * b);
+    result += '; a * b = ' + (a / b);
+    return result;
+
+}
+
+/*--------- 6 ---------*/
+
+alert('action 5 & 6 is ' + mathOperation(5, 5, '-'));
+
+function mathOperation(a, b, c) {
     switch (c) {
-        case 0:
+        case '+':
             return (a + b);
-        case 1:
+        case '-':
             return (a - b);
-        case 2:
+        case '*':
             return (a * b);
-        case 3:
+        case '/':
             return (a / b);
 
     }
 }
+
+/*------- 7 -----*/
+
+alert(null == 0);
+
+/*
+
+### 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return. 
+### 7) *Сравнить null и 0. Попробуйте объяснить результат. 
+### 8) *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+*/

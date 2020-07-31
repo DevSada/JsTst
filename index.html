@@ -4,12 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <style>
+        .link {
+            color: red;
+        }
+        
+        .cell {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .cellblack {
+            background-color: black;
+        }
+        
+        .chessboard {
+            display: flex;
+            flex-wrap: wrap;
+            width: 450px;
+            height: 450px;
+            border: 1px solid #000;
+        }
+        
+        .products {
+            display: flex;
+            justify-content: space-around;
+            width: 600px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        
+        .product-cell {
+            width: 150px;
+            border: 1px solid red;
+        }
+        
+        .product-btn {
+            width: 100px;
+        }
+        
+        .list-header {
+            width: 600px;
+        }
+        
+        .list-cost {
+            width: 600px;
+            text-align: right;
+            color: red;
+            font-weight: 700;
+            line-height: 3;
+            margin: 5px;
+        }
+        
+        .txt-center {
+            text-align: center;
+            line-height: 3;
+            margin: 5px;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <nav></nav>
+    </header>
+    <div class="chessboard"></div>
+    <div class="catalog products"></div>
+    <div class="cart products"></div>
 
-    <script src="script lesson 3.js"></script>
+    <script src="script lesson 4.js"></script>
+    <script src="script lesson 5.js"></script>
 </body>
 
 </html>
