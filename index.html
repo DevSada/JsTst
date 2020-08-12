@@ -18,12 +18,16 @@
             background-color: black;
         }
         
-        .chessboard {
+        .cellred {
+            background-color: red;
+        }
+        
+        .board {
             display: flex;
             flex-wrap: wrap;
-            width: 450px;
-            height: 450px;
-            border: 1px solid #000;
+            width: 30%;
+            border: 0px solid #000;
+            font-size: 9px;
         }
         
         .products {
@@ -68,12 +72,11 @@
     <header>
         <nav></nav>
     </header>
-    <div class="chessboard"></div>
+    <div class="board"></div>
     <div class="catalog products"></div>
     <div class="cart products"></div>
 
-    <script src="script lesson 4.js"></script>
-    <script src="script lesson 5.js"></script>
+    <script src="snake.js"></script>
 </body>
 
 </html>

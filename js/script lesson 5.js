@@ -20,7 +20,7 @@
 
 
 function chessBoard() {
-    let board = document.body.getElementsByClassName('chessboard')[0]
+    let board = document.body.getElementsByClassName('board')[0]
     const letters = "ABCDEFGH"
     let closeChessBtn = document.createElement('button')
     let openChessBtn = document.createElement('button')
@@ -86,14 +86,12 @@ function listGen(section) {
         btnTxt = "Add"
         listType = catalog
         listHeader.innerText = 'Catalog'
-    } else if (section === "cart") { //Basket
+    } else if (section === "cart" && cart.countCost() !== 0) { //Basket
         btnTxt = "Delete"
         listType = cart
         listFooter.classList.add("list-cost")
-        if (cart.countCost() !== 0) {
-            listHeader.innerText = 'Cart'
-            listFooter.innerText = cart.countCost()
-        }
+        listHeader.innerText = 'Cart'
+        listFooter.innerText = cart.countCost()
     }
 
     list.append(listHeader)
@@ -102,20 +100,36 @@ function listGen(section) {
         let prodName = document.createElement("div")
         let prodCost = document.createElement("div")
         let prodBtn = document.createElement("button", "txt-center")
+        let prodCount = 0
 
         prodImg.classList.add("product-cell", "txt-center")
         prodName.classList.add("product-cell", "txt-center")
         prodCost.classList.add("product-cell", "txt-center")
         prodBtn.classList.add("product-btn", "txt-center")
 
-        prodName.innerText = item.name
-        prodCost.innerText = item.cost
         prodBtn.innerText = btnTxt
         prodBtn.onclick = function(e) {
-
             if (section === "catalog") { cart.addProduct(item); } else { cart.removeProduct(item); }
             listGen("catalog")
             listGen("cart")
+        }
+
+
+        if (section === "cart") {
+            cart.products.forEach((cartItem, j, products) => {
+                if (cartItem.id === item.id) {
+                    prodCount += 1
+                }
+            })
+        }
+
+        if (prodCount > 1) {
+            prodName.innerText = item.name + ' (' + prodCount + ')'
+            prodCost.innerText = item.cost * prodCount
+        } else {
+            prodName.innerText = item.name
+            prodCost.innerText = item.cost
+
         }
         list.append(prodImg)
         list.append(prodName)
@@ -128,3 +142,51 @@ function listGen(section) {
 }
 listGen("catalog")
 listGen("cart")
+
+// const euros = [29.76, 41.85, 46.5];
+// const sum = euros.reduce((total, amount) => total + amount);
+// console.log(sum) // 118.11
+
+// var a = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4].reduce(function(acc, curr) {
+//     if (typeof acc[curr] == 'undefined') {
+//         acc[curr] = 1;
+//         console.log(acc + ' - ' + curr + ' - ' + acc[curr])
+//     } else {
+//         acc[curr] += 1;
+//         console.log(acc + ' - ' + curr + ' - ' + acc[curr])
+//     }
+
+//     return acc;
+// }, {});
+
+// console.log(a)
+//     // a == {2: 5, 4: 1, 5: 3, 9: 1}
+
+// const euros = [29.76, 41.85, 46.5];
+// const sum = euros.reduce((total, amount) => {
+
+// });
+// console.log(sum) // 118.11
+
+// let prodId = 2
+// let prodCount = 0
+// catalog.products.forEach(function(item, i, products) {
+//     if (item.id === prodId) {
+//         prodCount += 1
+//     }
+
+// })
+// console.log(prodCount)
+// let h = catalog.products.reduce(function(sum, item) {
+//     console.log('start')
+//     console.log(item.id)
+//     if (typeof sum[item.id] == 'undefined') {
+//         sum[item.id] = 1;
+//         console.log(sum + ' - ' + item.id + ' - ' + sum[item.id])
+//     } else {
+//         sum[item.id] += 1;
+//         console.log(sum + ' +1 ' + item.id + ' - ' + sum[item.id])
+//     }
+// });
+
+// console.log(h)

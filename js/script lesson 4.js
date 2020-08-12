@@ -112,3 +112,5 @@ catalog.addProduct(new Berries('cherry', 134, 4));
 catalog.addProduct(new Berries('strawberry', 56, 5));
 
 console.log(cart.countCost());
+
+//alert(`${apples} + ${oranges} = ${apples + oranges}`);
