@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .products {
+            display: flex;
+            margin: 0 10px;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            height: 100%;
+        }
+        
+        .item-wrap {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+            border: 1px solid #cecece;
+            margin: 2% 5%;
+        }
+        
+        .catalog {
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+        .cart {
+            width: 30%;
+            font-size: 10px;
+            text-transform: lowercase;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+        
+        .product-cell {
+            width: 100%;
+            letter-spacing: 5px;
+            color: rgb(31, 28, 28);
+        }
+        
+        .product-cost {
+            width: 10%;
+        }
+        
+        .btn {
+            width: 10%;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .list-header {
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+        .list-cost {
+            width: 100%;
+            text-align: right;
+            color: red;
+            font-weight: 700;
+            line-height: 3;
+            margin: 5px;
+        }
+        
+        .txt-center {
+            text-align: center;
+            line-height: 3;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <main class="wrapper">
+        <div class="catalog products"></div>
+        <div class="cart products"></div>
+    </main>
+
+    <script src="js/shop.js"></script>
+</body>
+
+</html>
